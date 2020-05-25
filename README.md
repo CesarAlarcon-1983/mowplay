@@ -1,7 +1,7 @@
 # Base readme
 
-Generated on 2017-10-16 using
-[generator-yeogurt@2.0.0](https://github.com/larsonjj/generator-yeogurt)
+Generated on 2020-05-23 using
+[generator-yeogurt@2.0.1](https://github.com/larsonjj/generator-yeogurt)
 
 ## Description
 

@@ -2,10 +2,9 @@
   "name": "base",
   "version": "0.0.1",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "jquery": "~3.1.1",
-    "normalize.css": "~5.0.0",
-    "bootstrap": "4.3.1",
-    "popper.js": "^1.14.7"
+    "normalize.css": "~5.0.0"
   },
   "devDependencies": {
     "lodash": "~4.17.4",
@@ -45,7 +44,12 @@
     "browserify": "~14.1.0"
   },
   "scripts": {
-    "clean-deps": "rimraf node_modules"
+    "clean-deps": "rimraf node_modules",
+    "clean": "gulp clean",
+    "lint": "gulp eslint",
+    "serve:prod": "NODE_ENV=development gulp serve",
+    "serve": "NODE_ENV=production gulp serve --production",
+    "build": "NODE_ENV=production gulp --production"
   },
   "engines": {
     "node": ">=0.12.0"
@@ -59,7 +63,7 @@
     "directories": {
       "source": "src",
       "destination": "build",
-      "temporary": "web",
+      "temporary": "tmp",
       "//": "Directories relative to `source` directory",
       "modules": "_modules",
       "layouts": "_layouts",

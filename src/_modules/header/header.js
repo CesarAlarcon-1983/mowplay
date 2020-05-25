@@ -16,6 +16,30 @@ var Header = function() {
         header.removeClass('-open');
         body.removeClass('-hideOverflow');
     });
+
+    var searchIcon = $('.header__nav__search-icon');
+    var searchbar = $('.header__searchbar');
+    var searchInput = $('.header__search-input')
+    var searchButton = $('.header__search-button')
+    var closeSearchContainer = $('.material-icons');
+
+    searchIcon.on('click', function() {
+        if(!searchbar.hasClass('-visible')) {
+            searchIcon.addClass('-hidden');
+            searchbar.addClass('-visible');
+            searchInput.addClass('-visible');
+            searchButton.addClass('-visible');
+            closeSearchContainer.addClass('-visible');
+        }
+    })
+
+    closeSearchContainer.on('click', function() {
+        searchIcon.removeClass('-hidden');
+        searchbar.removeClass('-visible');
+        searchInput.removeClass('-visible');
+        searchButton.removeClass('-visible');
+        closeSearchContainer.removeClass('-visible');
+    })
 };
 
 module.exports = Header;

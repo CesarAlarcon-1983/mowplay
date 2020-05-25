@@ -1,2 +1,18 @@
 header.header
-    
+    .header__container
+        a.header__logo(href="/")
+            img(src="/images/logo.png")
+        nav.header__nav
+            i.fas.fa-search.header__nav__search-icon
+            form.header__searchbar
+                input.header__search-input(placeholder="Search")
+                button.header__search-button
+                    i.fas.fa-search
+                span.material-icons close
+            .header__user-login
+                a.header__login(href="#") Login
+            a.header__user-menu(href="#")
+                .header__user-menu__image
+                    img(src="/images/user.png")
+                .header__user-menu__status-icon
+

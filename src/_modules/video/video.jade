@@ -1,0 +1,17 @@
+mixin video(data, mode)
+    .video-module(class="#{mode === 'compact' ? 'video-module--compact' : ''}")
+        a.video-module__video-thumbnail(href="/video-detail")
+            img(src=data.thumbnail)
+        .video-module__content
+            a.video-module__content__avatar(href="/profile")
+                img(src=data.avatar)
+            .video-module__content__container
+                h2.video-module__content__video-title=data.title
+                p.video-module__content__video-company=data.company
+                .video-module__content__video-details
+                    span.video-module__content__video-views
+                        | #{data.views} Vistas - 
+                    span.video-module__content__video-date
+                        | Hace #{data.date} 
+
+

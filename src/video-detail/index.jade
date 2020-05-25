@@ -1,0 +1,82 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+include ../_modules/video/video
+
+block content
+    main.video-detail
+        .container.custom-bt-container
+            .row
+                .col-24.col-md-16.custom-col
+                    .video-detail__container
+                        .video-detail__video
+                            iframe(src="https://www.youtube.com/embed/AizgQ0eXpb8" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+                        h2.video-detail__video-title Régimen modifica acuerdo con BCIE para usar US$11 millones para enfrentar emergencia por Covid-19
+                        .video-detail__video-stats
+                            .video-detail__video-stats__group
+                                .video-detail__video-stats__views 220k Vistas
+                                span -
+                                .video-detail__video-stats__date Hace 1 mes
+                            .video-detail__video-stats__group
+                                .video-detail__video-stats__likes
+                                    i.fas.fa-thumbs-up
+                                    span 125
+                                .video-detail__video-stats__unlikes
+                                    i.fas.fa-thumbs-down
+                                    span 22
+                    .video-detail__channel-profile
+                        .video-detail__channel-profile__heading
+                            .video-detail__channel-profile__group
+                                .video-detail__channel-profile__avatar
+                                    img(src="/images/videos/avatar6.png")
+                                .video-detail__channel-profile__details
+                                    h3.video-detail__channel-profile__title La prensa
+                                    span.video-detail__channel-profile__suscriptions 59,500 suscriptores
+                            .video-detail__channel-profile__group
+                                a.video-detail__channel-profile__suscription-button(href="#") Suscribe
+                        p.video-detail__video-description Ortega mandó a publicar en La Gaceta, Diario Oficial, el 4 de mayo, el Acuerdo Presidencial 04-2020 en el que dispone de esos 11.7 millones de dólares para ejecutar el «Programa de Emergencia Prevención y Contención del Covid-19 en Nicaragua».
+
+                    form.video-detail__add-comment-box
+                        span.video-detail__add-comment-box__total-comments 42 Comments
+                        .video-detail__add-comment-box__new-comment
+                            .video-detail__add-comment-box__new-comment-heading
+                                .video-detail__add-comment-box__new-comment-avatar
+                                    img(src="/images/user1.png")
+                                p.video-detail__add-comment-box__new-comment-title Add new comment
+                            textarea.video-detail__add-comment-box__new-comment-input
+                            button.video-detail__add-comment-box__new-comment-button Post comment
+
+                    .video-detail__comments
+                        .container
+                            .row
+                                each comment in site.data.comments
+                                    .col-24
+                                        .video-detail__comments__comment-container
+                                            .video-detail__comments__comment-avatar
+                                                img(src=comment.avatar)
+                                            .video-detail__comments__comment-details
+                                                p.video-detail__comments__comment-name=comment.name
+                                                span.video-detail__comments__comment-date=comment.date
+                                                p.video-detail__comments__comment-text=comment.comment
+                                                .video-detail__comments__comment-actions
+                                                    a.video-detail__comments__comment-reply(href="#") Reply
+                                                    a.video-detail__comments__comment-like(href="#") Like
+
+                .col-24.col-md-8
+                    .video-detail__banner
+                        img(src="/images/banner1.png")
+                    .video-detail__recommended-videos
+                        h3.video-detail__recommended-videos__title Recommended for you
+                        .row
+                            - for (var i = 0; i < 4; ++i) {
+                                .col-24
+                                    +video(site.data.videos[i], 'compact')
+                            - }
+
+                    .video-detail__banner
+                        img(src="/images/banner2.png")
+
+

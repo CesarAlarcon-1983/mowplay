@@ -1,0 +1,69 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+include ../_modules/video/video
+
+block content
+    main.profile
+        .profile__hero
+            .container.hero-container
+                .row
+                    .col-24
+                        .profile__hero__group
+                            .profile__hero__social
+                                ul.profile__hero__social-list
+                                    li.profile__hero__social-item
+                                        a(href="/" target="_blank")
+                                            i.fab.fa-instagram
+                                    li.profile__hero__social-item
+                                        a(href="/" target="_blank")
+                                            i.fab.fa-twitter
+                                    li.profile__hero__social-item
+                                        a(href="/" target="_blank")
+                                            i.fab.fa-facebook-f
+                                    li.profile__hero__social-item
+                                        a(href="/" target="_blank")
+                                            i.fab.fa-google-play
+                                a.profile__hero__social-url(href="www.laprensa.com" target="_blank") www.laprensa.com 
+                    .col-24
+                        .profile__hero__channel
+                            .profile__hero__channel-avatar
+                                img(src="/images/videos/avatar6.png")
+                            .profile__hero__channel-details
+                                h2.profile__hero__channel-title La prensa
+                                p.profile__hero__channel-description 
+                                    |La prensa, el diario de los nicaragüenses.
+                                    br
+                                    |Mantenete informado de las últimas noticias
+                    .col-24
+                        .profile__hero__channel-stats
+                            .profile__hero__channel-videos 
+                                strong 241
+                                |  Videos
+                            .profile__hero__channel-views 
+                                strong 2k
+                                |  Views
+                            .profile__hero__channel-suscriptions 
+                                strong 30.896
+                                |  Suscriptions
+                a.profile__hero__suscribe-button(href="#") suscribe
+
+        .profile__videos
+            .container.custom-bt-container
+                .row
+                    .col-24.col-md-18.custom-col
+                        .row
+                            .col-24
+                                h2.profile__videos__title Last Videos
+                            each video in site.data.videos
+                                .col-24.col-md-8
+                                    +video(video, '')
+                    .col-24.col-md-6
+                        .profile__videos__banner
+                            img(src="/images/banner1.png")
+                        .profile__videos__banner
+                            img(src="/images/banner2.png")
+
